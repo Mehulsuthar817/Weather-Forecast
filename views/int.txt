@@ -1,0 +1,66 @@
+               <% if(locals.data){%>
+           <%  if (data.weather[0].main === "Rain") { %>
+        <img
+          src="https://img.icons8.com/?size=100&id=QApkqtngP0RV&format=png&color=000000"
+          alt="Rain Icon"
+        />
+        <% } else if (data.weather[0].main === "Clear") { %>
+        <img
+          src="https://img.icons8.com/?size=100&id=xWIZQJTeNHmJ&format=png&color=000000"
+          alt="Clear Sky Icon"
+        />
+
+        <% } }else { %>
+        <% } else if (data.weather[0].main === "Clouds") { %>
+        <img
+          src="https://img.icons8.com/?size=100&id=Qb0bo60oUIkx&format=png&color=000000"
+          alt="Cloudy Icon"
+        />
+        <% } else if (data.weather[0].main === "Drizzle") { %>
+        <img
+          src="https://img.icons8.com/?size=100&id=N2Z6c8Ll668a&format=png&color=000000"
+          alt="Drizzle Icon"
+        />
+        <% } else if (data.weather[0].main === "Thunderstorm") { %>
+        <img
+          src="https://img.icons8.com/?size=100&id=ezR5QOXjCIPR&format=png&color=000000"
+          alt="Thunderstorm Icon"
+        />
+        <% } else if (data.weather[0].main === "Snow") { %>
+        <img
+          src="https://img.icons8.com/?size=100&id=hz3IyqvNkSYX&format=png&color=000000"
+          alt="Snow Icon"
+        />
+        <% } else if (data.weather[0].main === "Mist") { %>
+        <img
+          src="https://img.icons8.com/?size=100&id=SqSfgJkel4Ju&format=png&color=000000"
+          alt="Mist Icon"
+        />
+        <% } else if (data.weather[0].main === "Smoke") { %>
+        <img src="/icons/smoke.png" alt="Smoke Icon" />
+        <% } else if (data.weather[0].main === "Haze") { %>
+        <img
+          src="https://img.icons8.com/?size=100&id=7WQzKVrx2nlD&format=png&color=000000"
+          alt="Haze Icon"
+        />
+        <% } else if (data.weather[0].main === "Fog") { %>
+        <img
+          src="https://img.icons8.com/?size=100&id=SqSfgJkel4Ju&format=png&color=000000"
+          alt="Fog Icon"
+        />
+        <% } else if (data.weather[0].main === "Dust") { %>
+        <img src="/icons/dust.png" alt="Dust Icon" />
+        <% } else if (data.weather[0].main === "Sand") { %>
+        <img src="/icons/sand.png" alt="Sand Icon" />
+        <% } else if (data.weather[0].main === "Ash") { %>
+        <img src="/icons/ash.png" alt="Volcanic Ash Icon" />
+        <% } else if (data.weather[0].main === "Squall") { %>
+        <img
+          src="https://img.icons8.com/?size=100&id=xB2SHgRWLPwy&format=png&color=000000"
+          alt="Squall Icon"
+        />
+        <% } else if (data.weather[0].main === "Tornado") { %>
+        <img
+          src="https://img.icons8.com/?size=100&id=70EuxFpjCHoq&format=png&color=000000"
+          alt="Tornado Icon"
+        />

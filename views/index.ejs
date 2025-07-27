@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  <link rel="stylesheet" href="/styles/style.css" />
+</head>
+<body>
+  <div class="container bg-image"></div>
+    <div class="form">
+      <form action="/submit" method="post">
+        <input 
+          class="form-container"
+          type="text"
+          placeholder="Enter location name"
+          name="area"
+          required
+        />
+        <button type="submit" class="btn">GO</button>
+      </form>
+    </div>
+
+    <div class="row bg-text">
+      <% if (locals.data) { %>
+        <% const weather = data.list[0]; %>
+        <% const date = new Date(weather.dt * 1000); %>
+        <% const sunset = new Date(data.city.sunset * 1000); %>
+        <% const formattedSunset = sunset.toLocaleTimeString("en-IN", {hour: "2-digit",minute: "2-digit"});%>
+        <% const sunrise = new Date(data.city.sunrise * 1000); %>
+        <% const formattedSunrise = sunrise.toLocaleTimeString("en-IN", {hour: "2-digit",minute: "2-digit"}); %>
+        <% const options = { weekday: 'long', day: 'numeric', month: 'short' }; %>
+        <% const formattedDate = date.toLocaleDateString('en-US', options); %>
+        <% const main = weather.weather[0].main; %>
+        <% const description = weather.weather[0].description; %>
+        <% const temp = Math.floor(weather.main.temp); %>
+
+        <div class="location">
+          <h1><%= name %>, <%= data.city.name %></h1>
+        </div>
+
+        <div class="date">
+          <h4><%= formattedDate %></h4>
+        </div>
+
+        <div class="weather">
+          <h1><%= main %></h1>
+          <img
+            src="<%= 
+              main === 'Rain' ? 'https://img.icons8.com/?size=100&id=QApkqtngP0RV&format=png&color=000000' :
+              main === 'Clouds' ? 'https://img.icons8.com/?size=100&id=Qb0bo60oUIkx&format=png&color=000000' :
+              main === 'Clear' ? 'https://img.icons8.com/?size=100&id=xWIZQJTeNHmJ&format=png&color=000000' :
+              main === 'Drizzle' ? 'https://img.icons8.com/?size=100&id=N2Z6c8Ll668a&format=png&color=000000' :
+              main === 'Thunderstorm' ? 'https://img.icons8.com/?size=100&id=ezR5QOXjCIPR&format=png&color=000000' :
+              main === 'Mist' ? 'https://img.icons8.com/?size=100&id=SqSfgJkel4Ju&format=png&color=000000' :
+              main === 'Haze' ? 'https://img.icons8.com/?size=100&id=7WQzKVrx2nlD&format=png&color=000000' :
+              main === 'Snow' ? 'https://img.icons8.com/?size=100&id=hz3IyqvNkSYX&format=png&color=000000' :
+              main === 'Fog' ? 'https://img.icons8.com/?size=100&id=SqSfgJkel4Ju&format=png&color=000000' :
+              '' %>"
+            alt="<%= main %> Icon"
+          />
+          <h4><%= description %></h4>
+          <h5>Temperature: <%= temp %>°C</h5>
+        </div>
+          <div class="sun-time" >
+              <img src="https://img.icons8.com/?size=100&id=dtWnrVFqkUib&format=png&color=000000" alt="" height="30px">
+              sunrise: <%= formattedSunrise %><br>
+              <img src="https://img.icons8.com/?size=100&id=x0uspGxiXR18&format=png&color=000000" alt="" height="30px">
+              sunset:<%= formattedSunset %>
+        </div>
+      <% } else { %>
+        <div class="location"></div>
+        <div class="date"></div>
+        <div class="weather">
+          <h1>Enter a location to get weather</h1>
+        </div>
+        </div>
+      <% } %>
+    </div>
+
+  </div>
+</body>
+</html>
