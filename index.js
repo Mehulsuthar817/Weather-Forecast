@@ -36,7 +36,7 @@ app.post("/submit", async (req, res) => {
       params: {
         lat: ress[0].latitude,
         lon: ress[0].longitude,
-        appid: "24ace5b292e4172298f40f8b3d1aacac",
+        appid: "your appID",
         units: "metric"
       }
     });
