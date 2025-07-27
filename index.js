@@ -9,7 +9,7 @@ const geocoder = NodeGeocoder({
   provider: "openstreetmap",
   requestOptions: {
     headers: {
-      'User-Agent': 'WeatherAppDev/1.0 kasrubhai528@gmail.com)' 
+      'User-Agent': 'WeatherAppDev/1.0 <-your email->)' 
     }
   } 
 });
